@@ -5,3 +5,22 @@
 div {
   border: 4px solid salmon;
 }
+
+.list {
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+.listItem {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.listItem img {
+  height: 100%;
+  width: 100%;
+}
+.listItem .listItemText {
+  display: grid;
+  align-items: center;
+}

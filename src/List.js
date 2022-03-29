@@ -1,14 +1,21 @@
-import ListRecipes from "./ListRecipes";
+import Recipe from "./Recipes";
+import React from "react";
 
 export default function List(props) {
   console.log(props);
-  //we have access to the list
-  //map and return item
   return (
-    <div>
-      {/*  {map} */}
-
-      {/*   //return <ListRecipes  key .. . . /> */}
+    <div className="list">
+      {props.dataObj.map((item, index) => {
+        return (
+          <Recipe
+            key={item.fields.title}
+            title={item.fields.title}
+            instructions={item.fields.instructions}
+            ingredients={item.fields.ingredients1}
+            img={item.fields.picture.type}
+          />
+        );
+      })}
     </div>
   );
 }

@@ -1,21 +1,21 @@
 import Recipe from "./Recipes";
+import React from "react";
 
 export default function List(props) {
-  //we have access to the list
-  //map and return item
+  console.log(props);
   return (
     <div className="list">
-      {props.dataObj.map((element) => {
+      {props.dataObj.map((item, index) => {
         return (
           <Recipe
-            title={element.fields.title}
-            instructions={element.fields.instructions}
-            ingredients={element.fields.ingredients1}
+            key={item.fields.title}
+            title={item.fields.title}
+            instructions={item.fields.instructions}
+            ingredients={item.fields.ingredients1}
+            img={item.fields.picture.type}
           />
         );
       })}
-
-      {/*   //return <List  key .. . . /> */}
     </div>
   );
 }

@@ -14,7 +14,6 @@ div {
 .listItem {
   margin: 1rem;
   display: grid;
-  grid-template-columns: 1fr 2fr;
 }
 .listItem img {
   height: 100%;

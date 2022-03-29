@@ -3,8 +3,8 @@ export default function Recipe(props) {
     <div className="listItem">
       <div className="listItemText">
         <h1>{props.title}</h1>
-        <p>{props.instructions}</p>
         <p>{props.ingredients}</p>
+        <p>{props.instructions}</p>
       </div>
     </div>
   );

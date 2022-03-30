@@ -1,4 +1,4 @@
-import Recipe from "./Recipes";
+import Recipes from "./Recipes";
 import React from "react";
 
 export default function List(props) {
@@ -6,7 +6,8 @@ export default function List(props) {
     <div className="list">
       {props.dataObj.map((item, index) => {
         return (
-          <Recipe
+          <Recipes
+            id={item.sys.id}
             key={item.fields.title}
             img={item.fields.picture.fields.file.url}
             title={item.fields.title}

@@ -2,6 +2,7 @@ export default function Recipe(props) {
   return (
     <div className="listItem">
       <div className="listItemText">
+        <img className="recipeImg" src={props.img} alt="" />
         <h1>{props.title}</h1>
         <p>{props.ingredients}</p>
         <p>{props.instructions}</p>

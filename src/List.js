@@ -9,10 +9,10 @@ export default function List(props) {
         return (
           <Recipe
             key={item.fields.title}
+            img={item.fields.picture.fields.file.url}
             title={item.fields.title}
             instructions={item.fields.instructions}
             ingredients={item.fields.ingredients1}
-            img={item.fields.picture.type}
           />
         );
       })}

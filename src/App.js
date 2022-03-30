@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
+
 import List from "./List";
 import { client } from "./client";
 

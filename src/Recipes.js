@@ -1,4 +1,7 @@
-export default function Recipe(props) {
+import { useNavigate } from "react-router-dom";
+
+export default function Recipes(props) {
+  const navigate = useNavigate();
   return (
     <div class="card mb-3 m-5">
       <div class="row g-0">
@@ -18,7 +21,12 @@ export default function Recipe(props) {
             <p class="card-text">{props.instructions}</p>
 
             <p class="card-text d-flex justify-content-evenly">
-              <small class="btn btn-outline-dark px-4 py-2 me-1">
+              <small
+                class="btn btn-outline-dark px-4 py-2 me-1"
+                onClick={() => {
+                  navigate(`/recipe/${props.id}`);
+                }}
+              >
                 VIEW INGREDIENTS
               </small>
               <small class="btn btn-outline-dark px-5 py-2">VIEW RECIPE</small>

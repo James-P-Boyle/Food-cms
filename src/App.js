@@ -1,8 +1,9 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-
+import { Route, Routes } from "react-router-dom";
 import List from "./List";
 import { client } from "./client";
+import Recipe from "./Recipe";
 
 function App() {
   //state to store our recieved recipes
@@ -16,28 +17,12 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
-  /* const cleanUpData = (data) => {
-    const cleanData = data.map((dataFields) => {
-      const { sys, fields } = dataFields;
-      const { id } = sys;
-      const title = fields.title;
-      const ingredients = fields.ingredients;
-      const instructions = fields.instructions;
-      const foodImage = fields.image.fields.file.url;
-      const updatedData = {
-        id,
-        title,
-        ingredients,
-        instructions,
-        foodImage,
-      };
-      return updatedData;
-    });
-  }; */
-
   return (
     <div className="App">
-      <List dataObj={data} />
+      <Routes>
+        <Route path="/" element={<List dataObj={data} />} />
+        <Route path="/recipe/:recipeid" element={<Recipe />} />
+      </Routes>
     </div>
   );
 }

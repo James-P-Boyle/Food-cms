@@ -15,14 +15,15 @@ export default function Recipe() {
   }, [recipeid]);
 
   return (
-    <div className="list">
+    <div className="container">
       {foodItem.fields ? <h1>{foodItem.fields.title}</h1> : ""}
       {foodItem.fields ? <h5>{foodItem.fields.ingredients1}</h5> : ""}
       {foodItem.fields ? <h5>{foodItem.fields.instructions}</h5> : ""}
-      {/*    <img
+      {foodItem.fields ? <img
         src={`https://${foodItem.fields.picture.fields.file.url}`}
         alt="item"
-      /> */}
+      /> : ""}
+
     </div>
   );
 }

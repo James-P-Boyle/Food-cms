@@ -18,7 +18,9 @@ function App() {
 
   useEffect(() => {
     client
-      .getEntries()
+      .getEntries({
+        content_type: "foodRecipes",
+      })
       .then((res) => setData(res.items))
       .catch((error) => console.log(error));
   }, []);

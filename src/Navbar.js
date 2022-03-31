@@ -1,12 +1,27 @@
 import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { client } from "./client";
 
 export default function Navbar() {
+  const [logoImg, setLogoImg] = useState({});
+
+  useEffect(() => {
+    client
+      .getEntry({
+        content_type: "logo1",
+      })
+      .then((entry) => {
+        setLogoImg(entry.fields.logo.fields.file.url);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
           <NavLink className="navbar-brand fw-bold fs-4" to="/">
-            Logo
+            <img src={`https:${logoImg}`} className="img-fluid logoImg"></img>
           </NavLink>
           <button
             className="navbar-toggler"

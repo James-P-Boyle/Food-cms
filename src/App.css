@@ -2,7 +2,9 @@
   --pink: #e36397;
   --green: #61e786;
 }
-
+.logoImg {
+  max-height: 5rem;
+}
 .hero-img {
   height: 90vh;
 }

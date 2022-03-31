@@ -1,3 +1,17 @@
+:root {
+  --pink: #e36397;
+  --green: #61e786;
+}
+
 .hero-img {
-  height: 60vh;
+  height: 90vh;
+}
+.card-custom {
+  border-radius: 10px !important;
+  max-width: 1000px;
+}
+.card-custom img {
+  max-height: 25rem;
+  width: 100%;
+  border-radius: 10px;
 }

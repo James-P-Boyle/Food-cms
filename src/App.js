@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import List from "./List";
 import Login from "./Login";
+import Register from "./Register";
 
 function App() {
   //state to store our recieved recipes
@@ -32,6 +33,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </div>

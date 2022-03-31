@@ -3,17 +3,19 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 export default function About() {
- /*  const [images, setImages] = useState({});
+  const [hero, setHero] = useState({});
   //we need get image and set it as state
-  console.log(images);
+
   useEffect(() => {
     client
-      .getEntry({
-        content_type: "Images",
+      .getEntries({
+        content_type: "heroimages",
       })
-      .then((entry) => setImages(entry.fields.images))
+      .then((entries) => {
+        setHero(entries.items[1].fields.pic.fields.file.url);
+      })
       .catch(console.error);
-  }, []); */
+  }, []);
 
   return (
     <div className="container mt-3">
@@ -28,11 +30,7 @@ export default function About() {
             <small className="text-muted">Last updated 3 mins ago</small>
           </p>
         </div>
-      {/*   <img
-          src={`https:${images[0].fields.file.url}`}
-          className="card-img-bottom"
-          alt="..."
-        /> */}
+        <img src={`https:${hero}`} className="card-img-bottom" alt="..." />
       </div>
     </div>
   );

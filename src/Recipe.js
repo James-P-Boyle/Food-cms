@@ -23,6 +23,7 @@ export default function Recipe() {
         src={`https://${foodItem.fields.picture.fields.file.url}`}
         alt="item"
       /> : ""}
+      
 
     </div>
   );

@@ -3,14 +3,14 @@ export default function Login() {
     <div class="container">
       <div className="row">
         <div className="col-md-6 offset-md-3">
-          <h2 className="text-center text-dark mt-5">Login Form</h2>
-          <div className="text-center mb-5 text-dark">Made with bootstrap</div>
+          <h2 className="text-center text-dark mt-5">Login</h2>
+          <div className="text-center mb-5 text-dark">Welcome back</div>
           <div className="card my-5">
             <form className="card-body cardbody-color p-lg-5">
               <div className="text-center">
                 <img
-                  src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"
-                  className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                  src="https://cdn.pixabay.com/photo/2014/04/03/00/42/chef-hat-309146_960_720.png"
+                  className="img-fluid profile-image-pic img-thumbnail rounded-circle my-4"
                   width="200px"
                   alt="profile"
                 />
@@ -22,7 +22,7 @@ export default function Login() {
                   className="form-control"
                   id="Use className"
                   aria-describedby="emailHelp"
-                  placeholder="User className"
+                  placeholder="Username"
                 />
               </div>
               <div className="mb-3">
@@ -43,7 +43,7 @@ export default function Login() {
                 className="form-text text-center mb-5 text-dark"
               >
                 Not Registered?{" "}
-                <a href="#" className="text-dark fw-bold">
+                <a href="/Register" className="text-dark fw-bold">
                   {" "}
                   Create an Account
                 </a>

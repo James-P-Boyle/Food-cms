@@ -1,27 +1,34 @@
-export default function Recipe(props) {
+import { useNavigate } from "react-router-dom";
+
+export default function Recipes(props) {
+  const navigate = useNavigate();
   return (
-    <div class="card mb-3 m-5">
-      <div class="row g-0">
-        <div class="col-md-4 d-flex">
+    <div className="card mb-3 m-5">
+      <div className="row g-0">
+        <div className="col-md-6 d-flex">
           <img
             src={props.img}
-            class="img-fluid rounded-start foodImg"
+            className="img-fluid rounded-start foodImg"
             alt={props.title}
           ></img>
         </div>
-        <div class="col-md-8">
-          <div class="card-body d-flex flex-column justify-content-between h-100">
-            <h5 class="card-title card-header fw-bolder display-5 mb-3">
+        <div className="col-md-6">
+          <div className="card-body d-flex flex-column justify-content-between h-100">
+            <h5 className="card-title card-header fw-bolder display-5 mb-3">
               {props.title}
             </h5>
 
-            <p class="card-text">{props.instructions}</p>
+            <p className="card-text">{props.catchPhrase}</p>
 
-            <p class="card-text d-flex justify-content-evenly">
-              <small class="btn btn-outline-dark px-4 py-2 me-1">
+            <p className="card-text d-flex justify-content-evenly">
+              <small
+                className="btn btn-outline-dark px-4 py-2"
+                onClick={() => {
+                  navigate(`/recipe/${props.id}`);
+                }}
+              >
                 VIEW INGREDIENTS
               </small>
-              <small class="btn btn-outline-dark px-5 py-2">VIEW RECIPE</small>
             </p>
           </div>
         </div>

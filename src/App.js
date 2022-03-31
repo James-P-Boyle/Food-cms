@@ -1,13 +1,18 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-
-import List from "./List";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Home";
 import { client } from "./client";
+import Recipe from "./Recipe";
+import Navbar from "./Navbar";
+import About from "./About";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import List from "./List";
 
 function App() {
   //state to store our recieved recipes
   const [data, setData] = useState([]);
-  /*   const [cleanData, setCleanData] = useState([]); */
 
   useEffect(() => {
     client
@@ -16,28 +21,17 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
-  /* const cleanUpData = (data) => {
-    const cleanData = data.map((dataFields) => {
-      const { sys, fields } = dataFields;
-      const { id } = sys;
-      const title = fields.title;
-      const ingredients = fields.ingredients;
-      const instructions = fields.instructions;
-      const foodImage = fields.image.fields.file.url;
-      const updatedData = {
-        id,
-        title,
-        ingredients,
-        instructions,
-        foodImage,
-      };
-      return updatedData;
-    });
-  }; */
-
   return (
     <div className="App">
-      <List dataObj={data} />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home dataObj={data} />} />
+        <Route path="/recipes" element={<List dataObj={data} />} />
+        <Route path="/recipe/:recipeid" element={<Recipe />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

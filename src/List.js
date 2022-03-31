@@ -2,7 +2,6 @@ import Recipes from "./Recipes";
 import React from "react";
 
 export default function List(props) {
-  console.log(props.dataObj[0]);
   return (
     <div className="list">
       {props.dataObj.map((item, index) => {

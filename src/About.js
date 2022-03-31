@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 
 export default function About() {
-  const [images, setImages] = useState({});
+ /*  const [images, setImages] = useState({});
   //we need get image and set it as state
   console.log(images);
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function About() {
       })
       .then((entry) => setImages(entry.fields.images))
       .catch(console.error);
-  }, []);
+  }, []); */
 
   return (
     <div className="container mt-3">
@@ -28,11 +28,11 @@ export default function About() {
             <small className="text-muted">Last updated 3 mins ago</small>
           </p>
         </div>
-        <img
+      {/*   <img
           src={`https:${images[0].fields.file.url}`}
           className="card-img-bottom"
           alt="..."
-        />
+        /> */}
       </div>
     </div>
   );

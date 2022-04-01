@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home dataObj={data} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/recipes" element={<List dataObj={data} />} />
         <Route path="/recipe/:recipeid" element={<Recipe />} />
         <Route path="/about" element={<About />} />

@@ -1,18 +1,18 @@
 export default function Footer() {
   return (
-    <div className="container-fluid mt-5 bg-dark">
+    <div className="container-fluid bg-dark">
       <footer className="text-center text-lg-start">
         <div className="container d-flex justify-content-center py-2">
-          <button type="button" className="btn btn-primary btn-md mx-3">
+          <button type="button" className="btn btn-pink btn-md mx-3">
             <i className="fa fa-facebook-f"></i>
           </button>
-          <button type="button" className="btn btn-primary btn-md mx-3">
+          <button type="button" className="btn btn-pink btn-md mx-3">
             <i className="fa fa-youtube"></i>
           </button>
-          <button type="button" className="btn btn-primary btn-md mx-3">
+          <button type="button" className="btn btn-pink btn-md mx-3">
             <i className="fa fa-instagram"></i>
           </button>
-          <button type="button" className="btn btn-primary btn-md mx-3">
+          <button type="button" className="btn  btn-pink btn-md mx-3">
             <i className="fa fa-twitter"></i>
           </button>
         </div>

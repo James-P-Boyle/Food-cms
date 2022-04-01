@@ -1,9 +1,19 @@
-import List from "./List";
 import { useEffect, useState } from "react";
-/* import { useNavigate } from "react-router-dom"; */
+import { client } from "./client";
 
 export default function Home(props) {
-  /*  const navigate = useNavigate(); */
+  const [slides, setSlides] = useState([]);
+  console.log(slides);
+  useEffect(() => {
+    client
+      .getEntries({
+        content_type: "heroimages",
+      })
+      .then((entries) => {
+        setSlides(entries.items);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div>
@@ -34,42 +44,53 @@ export default function Home(props) {
             aria-label="Slide 3"
           ></button>
         </div>
-        <div className="carousel-inner">
-          {/*         {images....map((image, index) => {
-              return(
-              <div className={index ? "carousel-item" : "carousel-item active"}>
-              <img src="..." className="d-block w-100" alt="..." />
-              <div className="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
-              </div>
-           
-            )
-        })} */}
-        </div>
+        {slides.length ? (
+          <div className="carousel-inner">
+            {slides.map((slide, index) => {
+              return (
+                <div
+                  className={!index ? "carousel-item active" : "carousel-item"}
+                >
+                  <img
+                    src={`https:${slide.fields.pic.fields.file.url}`}
+                    className="d-block w-100 display-relative"
+                    alt="..."
+                  />
+                  <div className="imgOverlay"></div>
+                  <div className="carousel-caption h-100 d-flex flex-column justify-content-center align-items-start">
+                    <h5 className="display-2 fw-bolder z-top">
+                      {slide.fields.brand}
+                    </h5>
+                    <p className="display-6 z-top">{slide.fields.message}</p>
+                    <button className="btn btn-outline-light btn-dark  mt-3 py-2 px-5 z-top">
+                      OUR MENU
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          "Loading"
+        )}
+
         <button
-          className="carousel-control-prev"
+          class="carousel-control-prev indicator"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next"
+          class="carousel-control-next indicator"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
         >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
         </button>
       </div>
     </div>

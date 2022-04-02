@@ -2,12 +2,16 @@
   --white: rgb(249, 245, 245);
   --pink: #ee3d89;
   --green: #61e786;
+  --queenPink: #f2d5f845;
+  --pinkLace: #eac8ca;
+  --eggPlant: #493843;
 }
 /* NAVBAR */
 .logoImg {
   max-height: 4rem;
 }
 /* HOME */
+
 .imgOverlay {
   background: linear-gradient(
     90deg,
@@ -38,6 +42,17 @@
   border-radius: 10px;
 }
 
+/* CONTACT */
+.pinkBg {
+  background: linear-gradient(
+    90deg,
+    rgba(238, 61, 137, 1) 0%,
+    rgba(238, 61, 137, 0.45284051120448177) 56%,
+    rgba(238, 61, 137, 0.11390493697478987) 100%
+  );
+}
+
+/* FOOTER */
 .btn-pink {
   background-color: var(--white) !important;
 }
@@ -45,26 +60,21 @@
   background-color: var(--pink) !important;
 }
 
-
-.btn-color{
+.btn-color {
   background-color: #0e1c36;
   color: #fff;
-  
 }
 
-.profile-image-pic{
+.profile-image-pic {
   height: 200px;
   width: 200px;
   object-fit: cover;
 }
 
-
-
-.cardbody-color{
-  background-color: #fddde9;
+.cardbody-color {
+  background-color: var(--queenPink);
 }
 
-a{
+a {
   text-decoration: none;
 }
-

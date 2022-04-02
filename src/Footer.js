@@ -1,28 +1,25 @@
 export default function Footer() {
   return (
-    <div className="container-fluid bg-dark">
-      <footer className="text-center text-lg-start">
-        <div className="container d-flex justify-content-center py-2">
-          <button type="button" className="btn btn-pink btn-md mx-3">
+    <div className="container bg-light p-2 d-flex justify-content-center text-center border-top">
+      <footer className="row py-3 d-flex align-items-center">
+        <div className="col-4">
+          <h1>LOGO</h1>
+        </div>
+        <div className="col-4">
+          <button type="button" className="btn btn-pink btn-md">
             <i className="fa fa-facebook-f"></i>
           </button>
-          <button type="button" className="btn btn-pink btn-md mx-3">
+          <button type="button" className="btn btn-pink btn-md">
             <i className="fa fa-youtube"></i>
           </button>
-          <button type="button" className="btn btn-pink btn-md mx-3">
+          <button type="button" className="btn btn-pink btn-md">
             <i className="fa fa-instagram"></i>
           </button>
-          <button type="button" className="btn  btn-pink btn-md mx-3">
+          <button type="button" className="btn  btn-pink btn-md">
             <i className="fa fa-twitter"></i>
           </button>
         </div>
-
-        <div className="text-center text-white pb-2">
-          © 2020 Copyright:
-          <a className="text-white mx-2" href="https://mdbootstrap.com/">
-            Ren Boyles Food & Co
-          </a>
-        </div>
+        <div className="col-4 text-dark fw-bold">2022 FRESH © </div>
       </footer>
     </div>
   );

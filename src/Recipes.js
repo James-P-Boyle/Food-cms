@@ -4,8 +4,64 @@ export default function Recipes(props) {
   const navigate = useNavigate();
   return (
     <div className="container-fluid">
-      <div className="card mb-3 mx-auto m-5 card-custom border-0 shadow-lg">
-        <div className="row g-0">
+      <div className="container-sm">
+        <div className="row pt-5 pb-5">
+          <div className="col-md-3 p-2 card card-custom border-0 shadow-lg">
+            <img src={props.img} className="img-fluid" alt={props.title}></img>
+
+            <div className="card-body d-flex flex-column text-center">
+              <h5 className="">{props.title}</h5>
+            </div>
+
+            <div>
+              <p className="card-text">
+                <small
+                  className="btn btn-outline-dark  py-1  d-flex justify-content-center"
+                  onClick={() => {
+                    navigate(`/recipe/${props.id}`);
+                  }}
+                >
+                  VIEW RECIPE
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* pass down props and style how it will look */
+
+{
+  /* <div className="card mb-3 mx-auto m-5 card-custom border-0 shadow-lg"></div> */
+}
+
+{
+  /* 
+    </div>
+    <div className="col-md-4 p-2">
+
+    </div>
+    <div className="col-md-4 p-2">
+
+    </div>
+    <div className="col-md-4 p-2">
+
+    </div>
+    <div className="col-md-4 p-2">
+
+    </div>
+    <div className="col-md-4 p-2">
+
+    </div>
+  </div>
+</div> */
+}
+
+{
+  /* <div className="row g-0">
           <div className="col-md-8 d-flex">
             <img src={props.img} className="img-fluid" alt={props.title}></img>
           </div>
@@ -26,15 +82,10 @@ export default function Recipes(props) {
                     navigate(`/recipe/${props.id}`);
                   }}
                 >
-                  VIEW INGREDIENTS
+                  VIEW RECIPE
                 </small>
               </p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  );
+        </div> */
 }
-
-/* pass down props and style how it will look */

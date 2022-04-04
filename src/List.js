@@ -3,7 +3,8 @@ import React from "react";
 
 export default function List(props) {
   return (
-    <div className="list">
+    <div className="container">
+    <div className="row d-flex justify-content-evenly">
       {props.dataObj.map((item, index) => {
         return (
           <Recipes
@@ -17,6 +18,7 @@ export default function List(props) {
           />
         );
       })}
+    </div>
     </div>
   );
 }

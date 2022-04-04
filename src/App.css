@@ -83,3 +83,8 @@ a {
 .btn {
   background-color: var(--pink);
 }
+
+
+.bottom-border {
+  border-bottom-color: var(--pink) !important;
+}

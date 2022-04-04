@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { client } from "./client";
 import React from "react";
-import ReactMarkdown from "react-markdown";
 
 export default function Recipe() {
   const [foodItem, setFoodItem] = useState({});
@@ -17,7 +16,7 @@ export default function Recipe() {
 
   return (
     <div className="container">
-      <div className="card card-custom">
+      <div className="card card-custom mx-auto">
         <div className="card-body">
           <div className="col-md-8 offset-md-2 text-center pt-3">
             {foodItem.fields ? (
@@ -30,13 +29,15 @@ export default function Recipe() {
               ""
             )}
           </div>
-
           <div className="text-center pt-5 pb-5">
-            <h5 className="card-title">
-              {foodItem.fields ? <h1>{foodItem.fields.title}</h1> : ""}
-            </h5>
+            {foodItem.fields ? (
+              <h5 className="card-title display-4 fw-bolder">
+                {foodItem.fields.title}
+              </h5>
+            ) : (
+              ""
+            )}
           </div>
-
           <div className="container-sm">
             <div className="row pt-1 pb-5">
               <div className="col-md-6 p-2">
@@ -48,7 +49,6 @@ export default function Recipe() {
                   )}
                 </p>
               </div>
-
               <div className="col-md-6 p-2">
                 <p className="card-text">
                   {foodItem.fields ? (
@@ -60,7 +60,6 @@ export default function Recipe() {
               </div>
             </div>
           </div>
-
           <div>
             <p className="card-text">
               <small class="text-muted">Last updated 3 mins ago</small>

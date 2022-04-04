@@ -61,7 +61,7 @@
 }
 
 .btn-color {
-  background-color: #0e1c36;
+  background-color: var(--pink);
   color: #fff;
 }
 
@@ -72,9 +72,19 @@
 }
 
 .cardbody-color {
-  background-color: var(--queenPink);
+  background-color: var(--pinkLace);
 }
 
 a {
   text-decoration: none;
+}
+
+/*Navbar*/
+.btn {
+  background-color: var(--pink);
+}
+
+
+.bottom-border {
+  border-bottom-color: var(--pink) !important;
 }

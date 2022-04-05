@@ -14,7 +14,7 @@ export default function Register() {
                   src="https://cdn.pixabay.com/photo/2017/07/18/17/16/black-2516434_960_720.jpg"
                   className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
                   width="200px"
-                  alt="profile"
+                  alt="register"
                 />
               </div>
 

@@ -1,3 +1,7 @@
+* {
+  font-family: 'Lora', serif;;
+}
+
 :root {
   --white: rgb(249, 245, 245);
   --pink: #ee3d89;
@@ -72,7 +76,7 @@
 }
 
 .cardbody-color {
-  background-color: var(--pinkLace);
+  background-color: var(--white);
 }
 
 a {
@@ -86,4 +90,8 @@ a {
 
 .bottom-border {
   border-bottom-color: var(--pink) !important;
+}
+
+.aboutus {
+  font-family: 'Lora', serif;
 }

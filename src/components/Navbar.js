@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { client } from "./client";
+import { client } from "../client";
 
 export default function Navbar() {
   const [logoImg, setLogoImg] = useState({});
+  console.log(logoImg);
 
   useEffect(() => {
     client
@@ -21,7 +22,15 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div className="container">
           <NavLink className="navbar-brand fw-bold fs-4" to="/">
-            <img src={`https:${logoImg}`} className="img-fluid logoImg"></img>
+            {logoImg ? (
+              <img
+                src={`https:${logoImg}`}
+                className="img-fluid logoImg"
+                alt=""
+              ></img>
+            ) : (
+              "Logo"
+            )}
           </NavLink>
           <button
             className="navbar-toggler"
@@ -35,7 +44,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav nav-pills card-header-pills mx-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink className="nav-link active" aria-current="page" to="/">
                   Home

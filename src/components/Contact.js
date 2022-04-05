@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <div className="container my-5">
       <div className="card border-0">
-        <div className=" text-uppercase display-6 pinkBg p-3 fw-bolder">
+        <div className="text-light text-uppercase display-6 pinkBg p-3 fw-bolder rounded">
           <i className="fa fa-envelope me-2 "></i> Contact us.
         </div>
         <div className="card-body">

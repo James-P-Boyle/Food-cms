@@ -1,16 +1,15 @@
-import "./App.css";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Home";
+import Home from "./components/Home";
 import { client } from "./client";
-import Recipe from "./Recipe";
-import Navbar from "./Navbar";
-import About from "./About";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import List from "./List";
-import Login from "./Login";
-import Register from "./Register";
+import Recipe from "./components/Recipe";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import List from "./components/List";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   //state to store our recieved recipes

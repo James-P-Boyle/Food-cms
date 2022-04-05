@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { client } from "./client";
+import { client } from "../client";
 /* COMPONENTS */
-import DesertCards from "./components/DesertCards";
-import VeganHome from "./components/VeganHome";
+import DesertCards from "./DesertCards";
+import VeganHome from "./VeganHome";
+import { useNavigate } from "react-router-dom";
 
 export default function Home(props) {
+  const navigate = useNavigate();
   const [slides, setSlides] = useState([]);
   console.log(slides);
   useEffect(() => {
@@ -68,7 +70,12 @@ export default function Home(props) {
                         {slide.fields.brand}
                       </h5>
                       <p className="display-6 z-top">{slide.fields.message}</p>
-                      <button className="btn btn-outline-light btn-dark  mt-3 py-2 px-5 z-top">
+                      <button
+                        onClick={() => {
+                          navigate(`/recipes`);
+                        }}
+                        className="btn btn-outline-light btn-dark  mt-3 py-2 px-5 z-top"
+                      >
                         OUR MENU
                       </button>
                     </div>
@@ -86,7 +93,10 @@ export default function Home(props) {
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
@@ -95,7 +105,10 @@ export default function Home(props) {
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Next</span>
           </button>
         </div>

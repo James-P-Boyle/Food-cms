@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import { client } from "../client";
 
 export default function Navbar() {
-  const [logoImg, setLogoImg] = useState({});
-  console.log(logoImg);
+  const [logoImg, setLogoImg] = useState("");
 
   useEffect(() => {
     client
@@ -12,6 +11,7 @@ export default function Navbar() {
         content_type: "logo1",
       })
       .then((entry) => {
+        console.log(entry);
         setLogoImg(entry.fields.logo.fields.file.url);
       })
       .catch(console.error);
@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3">
         <div className="container">
           <NavLink className="navbar-brand fw-bold fs-4" to="/">
             {logoImg ? (

@@ -9,7 +9,7 @@ export default function List(props) {
           return (
             <Recipes
               id={item.sys.id}
-              key={item.fields.id}
+              key={item.sys.id}
               img={item.fields.picture.fields.file.url}
               title={item.fields.title}
               instructions={item.fields.instructions1}

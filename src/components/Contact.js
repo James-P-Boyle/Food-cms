@@ -10,7 +10,7 @@ export default function Contact() {
             <form className="card-body cardbody-color p-lg-4">
             <div className="text-center">
                 <img
-                  src="https://pixabay.com/get/gea7c54199d69fbac4e76cde2c152fa8e7955497140b6eee627e45aa15a00e9a4af8d58fae928279d79cd9cb56ec7105c_1280.png"
+                  src="https://pixabay.com/get/gcd384503f4f853f5eabdecd45f80c57563c5b9d8988fcdab01dbebebed667761b9a41987eb39e7b2430f6508b34393802b714266784e443eb9fe7d6444c27351_1280.png"
                   className="img-fluid profile-image-pic img-thumbnail rounded-circle my-4"
                   width="200px"
                   alt="contact us"
@@ -43,7 +43,7 @@ export default function Contact() {
                 required
               ></textarea>
             </div>
-              <div className="text-center py-4">
+              <div className="text-center py-2">
                 <button type="submit" className="btn btn-outline-dark py-3 mb-5 w-50">
                 Submit
                 </button>

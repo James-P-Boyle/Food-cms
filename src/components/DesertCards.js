@@ -3,9 +3,12 @@ export default function DesertCards(props) {
   return (
     <>
       <div className="container mt-5">
-        <h2 className="text-center display-6 fw-bolder pt-5">
-          Our Top Rated Deserts
-        </h2>
+
+        <h4 className="text-center display-4 fw-bolder pt-5">
+
+       
+         Our Top Rated Deserts
+        </h4>
         <div className="row d-flex justify-content-around py-3">
           {props.desertObj.map((desert) => {
             return (

@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import List from "./components/List";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Vegan from "./components/Vegan";
 
 function App() {
   //state to store our recieved recipes
@@ -35,6 +36,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/vegan" element={<Vegan />} />
       </Routes>
       <Footer />
     </div>

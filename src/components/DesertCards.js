@@ -1,4 +1,5 @@
-export default function DesertCards() {
+export default function DesertCards(props) {
+  console.log(props);
   return (
     <>
       <div className="container mt-5">
@@ -6,43 +7,37 @@ export default function DesertCards() {
           Our Top Rated Deserts
         </h2>
         <div className="row d-flex justify-content-around py-3">
-          <div className="col-10 col-md-5 p-4 border border-dark my-4">
-            <h2>Homemade Chocolate Cake</h2>
-            <p>Simply Delicious</p>
-            <div className="row">
-              <div className="col-6">
-                <button className="btn btn-outline-light btn-dark  mt-3 py-2 px-5 z-top">
-                  OUR MENU
-                </button>
-              </div>
-              <div className="col-6 d-flex align-items-end justify-content-end">
-                <i className="fa fa-star pe-1"></i>
-                <i className="fa fa-star pe-1"></i>
-                <i className="fa fa-star pe-1"></i>
-                <i className="fa fa-star pe-1"></i>
-                <i className="fa fa-star"></i>
-              </div>
-            </div>
-          </div>
+          {props.desertObj.map((desert) => {
+            return (
+              <>
+                <div className="col-10 col-md-5 border-0 shadow my-4 card">
+                  <img
+                    src={desert.fields.picture.fields.file.url}
+                    alt=""
+                    className="rounded"
+                  />
+                  <h2 className="display-6 text-center">
+                    {desert.fields.title}
+                  </h2>
 
-          <div className="col-10 col-md-5 p-4 border border-dark my-4">
-            <h2>Homemade Chocolate Cake</h2>
-            <p>Simply Delicious</p>
-            <div className="row">
-              <div className="col-6">
-                <button className="btn btn-outline-light btn-dark  mt-3 py-2 px-5">
-                  OUR MENU
-                </button>
-              </div>
-              <div className="col-6 d-flex align-items-end justify-content-end">
-                <i className="fa fa-star pe-1"></i>
-                <i className="fa fa-star pe-1"></i>
-                <i className="fa fa-star pe-1"></i>
-                <i className="fa fa-star pe-1"></i>
-                <i className="fa fa-star"></i>
-              </div>
-            </div>
-          </div>
+                  <div className="row">
+                    <div className="col-6">
+                      <button className="btn btn-outline-light btn-dark  my-2 py-2 px-3">
+                        View Recipe
+                      </button>
+                    </div>
+                    <div className="col-6 d-flex align-items-center justify-content-end my-2 py-2 px-3">
+                      <i className="fa fa-star pe-1"></i>
+                      <i className="fa fa-star pe-1"></i>
+                      <i className="fa fa-star pe-1"></i>
+                      <i className="fa fa-star pe-1"></i>
+                      <i className="fa fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </>
+            );
+          })}
         </div>
       </div>
     </>

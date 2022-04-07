@@ -26,7 +26,7 @@ export default function Navbar() {
               <img
                 src={`https:${logoImg}`}
                 className="img-fluid logoImg"
-                alt=""
+                alt="LOGO"
               ></img>
             ) : (
               "Logo"
@@ -43,7 +43,10 @@ export default function Navbar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className="collapse navbar-collapse text-center"
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink className="nav-link" aria-current="page" to="/">

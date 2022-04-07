@@ -35,7 +35,7 @@ export default function Home(props) {
     <>
       <div
         id="carouselExampleCaptions"
-        className="carousel slide"
+        className="carousel slide mx-4"
         data-bs-ride="carousel"
       >
         <div className="carousel-indicators">
@@ -74,10 +74,11 @@ export default function Home(props) {
                   />
                   <div className="imgOverlay"></div>
                   <div className="carousel-caption h-100 d-flex flex-column justify-content-center align-items-start">
-                    <h5 className="display-2 fw-bolder z-top">
+                    <h5 className="display-4 fw-bolder z-top">
                       {slide.fields.brand}
+                      <span className="copyright">©</span>
                     </h5>
-                    <p className="display-6 z-top">{slide.fields.message}</p>
+                    <p className="heroMessage z-top">{slide.fields.message}</p>
                     <button
                       onClick={() => {
                         navigate(`/recipes`);

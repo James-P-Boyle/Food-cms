@@ -16,7 +16,7 @@ export default function Recipe() {
 
   return (
     <div className="container my-2">
-      <div className="card card-custom mx-auto border-0">
+      <div className="card card-custom mx-auto border-1">
         <div className="card-body">
           <div className="col-md-8 offset-md-2 text-center pt-3">
             {foodItem.fields ? (
@@ -42,13 +42,14 @@ export default function Recipe() {
           <div className="row">
             <div className="col-md-8">
               {foodItem.fields
-                ? foodItem.fields.instructions1.content.map((node) => {
+                ? foodItem.fields.instructions1.content.map((node, index) => {
+                    console.log(node);
                     if (node.nodeType === "ordered-list") {
                       return (
-                        <ol key={1}>
-                          {node.content.map((orderedItem) => {
+                        <ol key={index}>
+                          {node.content.map((orderedItem, index) => {
                             return (
-                              <li key={orderedItem.content[0].content[0].value}>
+                              <li key={index}>
                                 {orderedItem.content[0].content[0].value}
                               </li>
                             );
@@ -57,10 +58,7 @@ export default function Recipe() {
                       );
                     } else if (node.nodeType === "heading-2") {
                       return (
-                        <h2
-                          className="display-6 fw-bolder"
-                          key={node.content[0].value}
-                        >
+                        <h2 className="display-6 fw-bolder" key={index}>
                           {node.content[0].value}
                         </h2>
                       );
@@ -73,13 +71,13 @@ export default function Recipe() {
 
             <div className="col-md-4">
               {foodItem.fields
-                ? foodItem.fields.ingredients2.content.map((node) => {
+                ? foodItem.fields.ingredients2.content.map((node, index) => {
                     if (node.nodeType === "unordered-list") {
                       return (
-                        <ul key={2}>
-                          {node.content.map((listItem) => {
+                        <ul key={`ing-${index}`}>
+                          {node.content.map((listItem, index) => {
                             return (
-                              <li key={listItem.content[0].content[0].value}>
+                              <li key={`ing-ul-${index}`}>
                                 {listItem.content[0].content[0].value}
                               </li>
                             );
@@ -90,7 +88,7 @@ export default function Recipe() {
                       return (
                         <h2
                           className="display-6 fw-bolder"
-                          key={node.content[0].value}
+                          key={`ing-${index}`}
                         >
                           {node.content[0].value}
                         </h2>

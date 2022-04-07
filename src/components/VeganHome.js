@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function VeganHome() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="container-fluid bg-danger py-5 my-5">
@@ -12,7 +15,12 @@ export default function VeganHome() {
               expedita doloremque similique eveniet! Optio repellat quia
               voluptatem est id sint. Earum, nihil?
             </p>
-            <button className="btn btn-outline-light btn-dark  mt-3 py-2 px-5 z-top">
+            <button
+              onClick={() => {
+                navigate(`/vegan`);
+              }}
+              className="btn btn-outline-light btn-dark  mt-3 py-2 px-5 z-top"
+            >
               Discover Our Recipes
             </button>
           </div>

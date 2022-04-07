@@ -1,5 +1,5 @@
 * {
-  font-family: 'Lora', serif;;
+  font-family: "Lora", serif;
 }
 
 :root {
@@ -15,6 +15,10 @@
   max-height: 4rem;
 }
 /* HOME */
+
+.carousel img {
+  max-height: 85vh;
+}
 
 .imgOverlay {
   background: linear-gradient(
@@ -93,5 +97,5 @@ a {
 }
 
 .aboutus {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }

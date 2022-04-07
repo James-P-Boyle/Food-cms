@@ -15,8 +15,8 @@ export default function Recipe() {
   }, [recipeid]);
 
   return (
-    <div className="container">
-      <div className="card card-custom mx-auto">
+    <div className="container my-2">
+      <div className="card card-custom mx-auto border-0">
         <div className="card-body">
           <div className="col-md-8 offset-md-2 text-center pt-3">
             {foodItem.fields ? (

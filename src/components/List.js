@@ -3,6 +3,9 @@ import React from "react";
 
 export default function List(props) {
   return (
+    <>
+    <h2 className="text-center text-dark mt-5">Recipes</h2>
+      <div className="text-center mb-2 text-dark">Here is our top picks for the week</div>
     <div className="container">
       <div className="row d-flex justify-content-evenly">
         {props.dataObj.map((item, index) => {
@@ -20,5 +23,6 @@ export default function List(props) {
         })}
       </div>
     </div>
+    </>
   );
 }

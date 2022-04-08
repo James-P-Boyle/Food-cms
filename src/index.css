@@ -67,6 +67,11 @@ body {
   width: 100%;
   border-radius: 10px;
 }
+
+/* DESSERT CARDS */
+.dessertImg {
+  max-height: 18rem !important;
+}
 /* CONTACT */
 
 /* FOOTER */

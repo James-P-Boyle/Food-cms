@@ -22,6 +22,5 @@ export default function Recipes(props) {
           </small>
         </div>
       </div>
-    
   );
 }

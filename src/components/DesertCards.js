@@ -7,19 +7,19 @@ export default function DesertCards(props) {
         <h4 className="text-center display-4 fw-bolder pt-5">
 
        
-         Our Top Rated Deserts
+         Our Top Rated Desserts
         </h4>
         <div className="row d-flex justify-content-around py-3">
           {props.desertObj.map((desert) => {
             return (
               <div
                 key={desert.sys.id}
-                className="col-10 col-md-5 shadow my-4 card bottom-pink-border card-custom"
+                className="col-10 col-md-5 shadow my-4 pt-2 card bottom-pink-border card-custom"
               >
-                <img
+                <img 
                   src={desert.fields.picture.fields.file.url}
                   alt=""
-                  className="rounded"
+                  className="rounded dessertImg"
                 />
 
                 <h2 className="display-7 mt-3 text-center">

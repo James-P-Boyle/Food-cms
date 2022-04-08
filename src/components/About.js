@@ -18,11 +18,11 @@ export default function About() {
   }, []);
 
   return (
-    <div>
+    <>
       <h2 className="text-center text-dark mt-5">About Us</h2>
       <div className="text-center mb-5 text-dark">Here is our story</div>
       <div className="container aboutus">
-        <div className="row mt-5 mx-auto my-5 p-2 card-custom border-0 shadow-lg">
+        <div className="bottom-pink-border row mt-5 mx-auto my-5 p-2 card-custom shadow-lg">
           <div className="card-body col-md-6 d-flex flex-column text-center py-4 align-items-center">
             <h5 className="card-title mx-auto">About Us</h5>
             <p className="card-text">
@@ -81,7 +81,7 @@ export default function About() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

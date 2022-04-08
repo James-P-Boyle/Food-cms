@@ -18,10 +18,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3">
+   
+      <nav className="navbar navbar-expand-lg navbar-light bg-white py-1 shadow-sm sticky-top">
         <div className="container">
-          <NavLink className="navbar-brand fw-bold fs-4" to="/">
+          <NavLink className="navbar-brand fw-bold fs-4 " to="/" >
             {logoImg ? (
               <img
                 src={`https:${logoImg}`}
@@ -80,7 +80,7 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </div>
+   
 
     //LINKS
     // --- LOGO

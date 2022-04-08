@@ -10,44 +10,38 @@ export default function About() {
   //we need get image and set it as state
 
   useEffect(() => {
+    setLoading(true);
     client
       .getEntries({
         content_type: "heroimages",
       })
       .then((entries) => {
-        setLoading(true);
         setHero(entries.items[1].fields.pic.fields.file.url);
+        setLoading(false);
       })
       .catch(console.error);
-    setLoading(false);
   }, []);
 
   const Loading = () => {
     return (
       <>
-        <div className="col-md-3">
-          <Skeleton height="350px" />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height="350px" />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height="350px" />
-        </div>
-        <div className="col-md-3">
-          <Skeleton height="350px" />
-        </div>
-        <div className="col-md-3 my-3">
-          <Skeleton height="350px" />
-        </div>
-        <div className="col-md-3 my-3">
-          <Skeleton height="350px" />
-        </div>
-        <div className="col-md-3 my-3">
-          <Skeleton height="350px" />
-        </div>
-        <div className="col-md-3 my-3">
-          <Skeleton height="350px" />
+        <div className="row mx-auto">
+          <div className="text-center">
+            <Skeleton height="60px" width="150px" />
+            <Skeleton height="50px" width="250px" />
+          </div>
+          <div className="col-6">
+            <Skeleton height="300px" />
+          </div>
+          <div className="col-6">
+            <Skeleton height="300px" />
+          </div>
+          <div className="col-6">
+            <Skeleton height="300px" />
+          </div>
+          <div className="col-6">
+            <Skeleton height="300px" />
+          </div>
         </div>
       </>
     );
@@ -55,7 +49,7 @@ export default function About() {
 
   const ShowAbout = () => {
     return (
-      <>
+      <div className="row mt-5 mx-auto my-5 p-2 card-custom border-0 shadow-lg">
         <div className="card-body col-md-6 d-flex flex-column text-center py-4 align-items-center">
           <h5 className="card-title mx-auto">About Us</h5>
           <p className="card-text">
@@ -110,44 +104,13 @@ export default function About() {
         <div className="col-md-6">
           <img src={`https:${hero}`} className="card-img-bottom" alt="..." />
         </div>
-      </>
+      </div>
     );
   };
 
   return (
     <div className="container aboutus">
-      <div className="row mt-5 mx-auto my-5 p-2 card-custom border-0 shadow-lg">
-        {loading ? <Loading /> : <ShowAbout />}
-      </div>
+      {loading ? <Loading /> : <ShowAbout />}
     </div>
   );
-}
-
-{
-  /* <div className="container mt-3">
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">About Us</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-          <h5 className="card-title">Where We Started</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-          <h5 className="card-title">The Journey</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-          <img src={`https:${hero}`} className="card-img-bottom" alt="..." />
-          <p className="card-text">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-        
-      </div>
-    </div> */
 }

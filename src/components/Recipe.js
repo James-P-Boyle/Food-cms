@@ -6,6 +6,7 @@ import React from "react";
 export default function Recipe() {
   const [foodItem, setFoodItem] = useState({});
   const { recipeid } = useParams();
+  console.log(foodItem);
 
   useEffect(() => {
     client

@@ -1,24 +1,54 @@
 import { client } from "../client";
 import React from "react";
 import { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
 
 export default function About() {
   const [hero, setHero] = useState({});
+  const [loading, setLoading] = useState(false);
+
   //we need get image and set it as state
 
   useEffect(() => {
+    setLoading(true);
     client
       .getEntries({
         content_type: "heroimages",
       })
       .then((entries) => {
         setHero(entries.items[1].fields.pic.fields.file.url);
+        setLoading(false);
       })
       .catch(console.error);
   }, []);
 
-  return (
-    <div className="container aboutus">
+  const Loading = () => {
+    return (
+      <>
+        <div className="row mx-auto">
+          <div className="text-center">
+            <Skeleton height="60px" width="150px" />
+            <Skeleton height="50px" width="250px" />
+          </div>
+          <div className="col-6">
+            <Skeleton height="300px" />
+          </div>
+          <div className="col-6">
+            <Skeleton height="300px" />
+          </div>
+          <div className="col-6">
+            <Skeleton height="300px" />
+          </div>
+          <div className="col-6">
+            <Skeleton height="300px" />
+          </div>
+        </div>
+      </>
+    );
+  };
+
+  const ShowAbout = () => {
+    return (
       <div className="row mt-5 mx-auto my-5 p-2 card-custom border-0 shadow-lg">
         <div className="card-body col-md-6 d-flex flex-column text-center py-4 align-items-center">
           <h5 className="card-title mx-auto">About Us</h5>
@@ -75,35 +105,12 @@ export default function About() {
           <img src={`https:${hero}`} className="card-img-bottom" alt="..." />
         </div>
       </div>
+    );
+  };
+
+  return (
+    <div className="container aboutus">
+      {loading ? <Loading /> : <ShowAbout />}
     </div>
   );
-}
-
-{
-  /* <div className="container mt-3">
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">About Us</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-          <h5 className="card-title">Where We Started</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-          <h5 className="card-title">The Journey</h5>
-          <p className="card-text">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </p>
-          <img src={`https:${hero}`} className="card-img-bottom" alt="..." />
-          <p className="card-text">
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-        
-      </div>
-    </div> */
 }

@@ -10,7 +10,7 @@ export default function Contact() {
             <form className="card-body cardbody-color p-lg-4">
             <div className="text-center">
                 <img
-                  src="https://pixabay.com/get/gcd384503f4f853f5eabdecd45f80c57563c5b9d8988fcdab01dbebebed667761b9a41987eb39e7b2430f6508b34393802b714266784e443eb9fe7d6444c27351_1280.png"
+                  src="https://pixabay.com/get/gfe7610c3df0b46f9d9bff8667480dae182d90e54b86c698b353641cb19d547f2b59b5f004cb717e6378bef7ac1e3bc393524a4e9e9fb55b615ec9228ffcfb2c5_1280.png"
                   className="img-fluid profile-image-pic img-thumbnail rounded-circle my-4"
                   width="200px"
                   alt="contact us"

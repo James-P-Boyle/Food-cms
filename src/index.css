@@ -16,6 +16,10 @@ body {
 .logoImg {
   max-height: 4rem;
 }
+
+.nav-active-style:active {
+  background-color: #61e786 !important;
+}
 /* .btn {
   background-color: var(--pink);
 }

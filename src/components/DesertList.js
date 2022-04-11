@@ -1,7 +1,20 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { client } from "../client";
 
-export default function DesertCards(props) {
-  const navigate = useNavigate();
+export default function DesertList() {
+  const [cakeImgs, setCakeImgs] = useState([]);
+
+  useEffect(() => {
+    client
+      .getEntries({
+        content_type: "dessert",
+      })
+      .then((entries) => {
+        setCakeImgs(entries.items);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
     <>
       <div className="container mt-5">
@@ -9,7 +22,7 @@ export default function DesertCards(props) {
           Our Top Rated Desserts
         </h4>
         <div className="row d-flex justify-content-around py-3">
-          {props.desertObj.map((desert) => {
+          {cakeImgs.map((desert) => {
             return (
               <div
                 key={desert.sys.id}
@@ -27,12 +40,7 @@ export default function DesertCards(props) {
 
                 <div className="row">
                   <div className="col-6">
-                    <button
-                      onClick={() => {
-                        navigate(`/desserts`);
-                      }}
-                      className="btn btn-outline-light btn-dark  my-2 py-2 px-3"
-                    >
+                    <button className="btn btn-outline-light btn-dark  my-2 py-2 px-3">
                       View Recipe
                     </button>
                   </div>

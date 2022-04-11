@@ -11,6 +11,7 @@ import List from "./components/List";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Vegan from "./components/Vegan";
+import DesertList from "./components/DesertList";
 
 function App() {
   //state to store our recieved recipes
@@ -37,6 +38,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/vegan" element={<Vegan />} />
+        <Route path="/desserts" element={<DesertList />} />
       </Routes>
       <Footer />
     </div>
